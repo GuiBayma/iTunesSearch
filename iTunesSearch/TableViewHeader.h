@@ -11,4 +11,6 @@
 @interface TableViewHeader : UIView
 
 @property (weak, nonatomic) IBOutlet UITextField *textoBusca;
+@property (weak, nonatomic) IBOutlet UIButton *buscaButton;
+@property (weak, nonatomic) IBOutlet UILabel *tituloLabel;
 @end

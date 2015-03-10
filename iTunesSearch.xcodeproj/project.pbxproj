@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		174BA59F1AAF772D00050C81 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 174BA5A11AAF772D00050C81 /* Localizable.strings */; };
 		177D35EB1AAF2DA70054FD57 /* TableViewHeader.xib in Resources */ = {isa = PBXBuildFile; fileRef = 177D35EA1AAF2DA70054FD57 /* TableViewHeader.xib */; };
 		177D35EE1AAF2F150054FD57 /* TableViewHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = 177D35ED1AAF2F150054FD57 /* TableViewHeader.m */; };
 		92C21CB61AAE757A0052ABE6 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 92C21CB51AAE757A0052ABE6 /* main.m */; };
@@ -32,6 +33,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		174BA5A01AAF772D00050C81 /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/Localizable.strings; sourceTree = "<group>"; };
+		174BA5A21AAF773000050C81 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		174BA5A31AAF79AF00050C81 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/Localizable.strings; sourceTree = "<group>"; };
 		177D35EA1AAF2DA70054FD57 /* TableViewHeader.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TableViewHeader.xib; sourceTree = "<group>"; };
 		177D35EC1AAF2F150054FD57 /* TableViewHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TableViewHeader.h; sourceTree = "<group>"; };
 		177D35ED1AAF2F150054FD57 /* TableViewHeader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TableViewHeader.m; sourceTree = "<group>"; };
@@ -101,6 +105,7 @@
 				92C21CB81AAE757A0052ABE6 /* AppDelegate.m */,
 				92C21CBA1AAE757A0052ABE6 /* TableViewController.h */,
 				92C21CBB1AAE757A0052ABE6 /* TableViewController.m */,
+				174BA5A11AAF772D00050C81 /* Localizable.strings */,
 				92C21CDC1AAE75DC0052ABE6 /* TableView.xib */,
 				92C21CD91AAE75B30052ABE6 /* iTunesManager.h */,
 				92C21CDA1AAE75B30052ABE6 /* iTunesManager.m */,
@@ -221,6 +226,7 @@
 			knownRegions = (
 				en,
 				Base,
+				fr,
 			);
 			mainGroup = 92C21CA71AAE757A0052ABE6;
 			productRefGroup = 92C21CB11AAE757A0052ABE6 /* Products */;
@@ -238,6 +244,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				174BA59F1AAF772D00050C81 /* Localizable.strings in Resources */,
 				177D35EB1AAF2DA70054FD57 /* TableViewHeader.xib in Resources */,
 				92C21CC11AAE757A0052ABE6 /* Images.xcassets in Resources */,
 				92C21CE21AAE76930052ABE6 /* TableViewCell.xib in Resources */,
@@ -286,6 +293,19 @@
 			targetProxy = 92C21CCA1AAE757A0052ABE6 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		174BA5A11AAF772D00050C81 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				174BA5A01AAF772D00050C81 /* Base */,
+				174BA5A21AAF773000050C81 /* en */,
+				174BA5A31AAF79AF00050C81 /* fr */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		92C21CD11AAE757A0052ABE6 /* Debug */ = {
