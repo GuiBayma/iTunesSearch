@@ -14,6 +14,8 @@
 @property (strong, nonatomic) IBOutlet UITableView *tableview;
 @property NSArray *filmes;
 @property NSArray *musicas;
+@property NSArray *podcasts;
+@property NSArray *ebooks;
 
 @end
 

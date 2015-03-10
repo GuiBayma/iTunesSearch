@@ -66,6 +66,7 @@
                 <outlet property="artista" destination="bvO-7i-51h" id="ML5-Xg-CGm"/>
                 <outlet property="nome" destination="UIA-JU-luV" id="ubX-WX-gam"/>
                 <outlet property="tipo" destination="6Z5-yj-wnl" id="vYj-HE-tLd"/>
+                <outlet property="tipoArtista" destination="4nx-L2-PiR" id="KUV-cX-Nw9"/>
             </connections>
             <point key="canvasLocation" x="144" y="-453"/>
         </tableViewCell>

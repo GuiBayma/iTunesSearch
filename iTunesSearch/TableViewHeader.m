@@ -17,6 +17,8 @@
     TableViewController *tvc = (TableViewController *)[UIApplication sharedApplication].keyWindow.rootViewController;
     tvc.filmes = [itunes buscarFilmes:_textoBusca.text];
     tvc.musicas = [itunes buscarMusicas:_textoBusca.text];
+    tvc.podcasts = [itunes buscarPodcasts:_textoBusca.text];
+    tvc.ebooks = [itunes buscarEbooks:_textoBusca.text];
     [tvc.tableview reloadData];
 }
 

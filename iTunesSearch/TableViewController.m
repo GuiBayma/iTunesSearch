@@ -10,6 +10,9 @@
 #import "TableViewCell.h"
 #import "iTunesManager.h"
 #import "Entidades/Filme.h"
+#import "Musica.h"
+#import "Podcast.h"
+#import "Ebook.h"
 #import "TableViewHeader.h"
 
 @interface TableViewController () {
@@ -27,14 +30,10 @@
     UINib *nib = [UINib nibWithNibName:@"TableViewCell" bundle:nil];
     [self.tableview registerNib:nib forCellReuseIdentifier:@"celulaPadrao"];
     
-    itunes = [iTunesManager sharedInstance];
-    _filmes = [itunes buscarFilmes:@"Apple"];
-    _musicas = [itunes buscarMusicas:@"Love"];
-    
     tableHeader = [[[NSBundle mainBundle] loadNibNamed:@"TableViewHeader" owner:self options:nil] firstObject];
     
-    [tableHeader.buscaButton setTitle:NSLocalizedString(@"busca", @"") forState:UIControlStateNormal];
-    [tableHeader.tituloLabel setText:NSLocalizedString(@"titulo", @"")];
+    [tableHeader.buscaButton setTitle:NSLocalizedString(@"busca", nil) forState:UIControlStateNormal];
+    [tableHeader.tituloLabel setText:NSLocalizedString(@"titulo", nil)];
     
     self.tableview.translatesAutoresizingMaskIntoConstraints = NO;
     [self.view addSubview:tableHeader];
@@ -47,13 +46,15 @@
 
 #pragma mark - Metodos do UITableViewDataSource
 -(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-    return 2;
+    return 4;
 }
 
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     switch (section) {
         case 0: return [_filmes count]; break;
         case 1: return [_musicas count]; break;
+        case 2: return [_podcasts count]; break;
+        case 3: return [_ebooks count]; break;
         default: return 0; break;
     }
 }
@@ -62,6 +63,8 @@
     switch (section) {
         case 0: return @"Filmes"; break;
         case 1: return @"Musicas"; break;
+        case 2: return @"Podcasts"; break;
+        case 3: return @"Ebooks"; break;
         default: return nil; break;
     }
 }
@@ -74,18 +77,39 @@
     
         [celula.nome setText:filme.nome];
         [celula.tipo setText:@"Filme"];
+        [celula.tipoArtista setText:@"Diretor:"];
         [celula.artista setText:filme.artista];
     
-    return celula;
+        return celula;
     }
-    else {
-        Filme *filme = [_musicas objectAtIndex:indexPath.row];
-        [celula.nome setText:filme.nome];
-        [celula.tipo setText:@"Filme"];
-        [celula.artista setText:filme.artista];
+    else if (indexPath.section == 1) {
+        Musica *musica = [_musicas objectAtIndex:indexPath.row];
+        [celula.nome setText:musica.nome];
+        [celula.tipo setText:@"Musica"];
+        [celula.tipoArtista setText:@"Músico:"];
+        [celula.artista setText:musica.artista];
         
         return celula;
     }
+    else if (indexPath.section == 2) {
+        Podcast *podcast = [_podcasts objectAtIndex:indexPath.row];
+        [celula.nome setText:podcast.nome];
+        [celula.tipo setText:@"Podcast"];
+        [celula.tipoArtista setText:@"Artista:"];
+        [celula.artista setText:podcast.artista];
+        
+        return celula;
+    }
+    else {
+        Ebook *ebook = [_ebooks objectAtIndex:indexPath.row];
+        [celula.nome setText:ebook.nome];
+        [celula.tipo setText:@"Ebook"];
+        [celula.tipoArtista setText:@"Autor:"];
+        [celula.artista setText:ebook.artista];
+        
+        return celula;
+    }
+    return celula;
 }
 
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {

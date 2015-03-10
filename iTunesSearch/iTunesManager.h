@@ -18,5 +18,7 @@
 
 - (NSArray *)buscarFilmes:(NSString *)termo;
 - (NSArray *)buscarMusicas:(NSString *)termo;
+- (NSArray *)buscarPodcasts:(NSString *)termo;
+- (NSArray *)buscarEbooks:(NSString *)termo;
 
 @end
