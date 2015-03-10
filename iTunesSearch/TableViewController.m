@@ -35,8 +35,6 @@
     [tableHeader.buscaButton setTitle:NSLocalizedString(@"busca", nil) forState:UIControlStateNormal];
     [tableHeader.tituloLabel setText:NSLocalizedString(@"titulo", nil)];
     
-    self.tableview.translatesAutoresizingMaskIntoConstraints = NO;
-    [self.view addSubview:tableHeader];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -124,11 +122,10 @@
 }
 
 -(CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {
-    return 60;
-}
-
--(void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
-    [tableHeader.textoBusca resignFirstResponder];
+    if (section == 0) {
+        return 90;
+    }
+    return  60;
 }
 
 
