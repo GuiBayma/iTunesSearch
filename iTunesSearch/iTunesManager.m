@@ -55,11 +55,8 @@ static bool isFirstAccess = YES;
     for (NSDictionary *item in resultados) {
         Filme *filme = [[Filme alloc] init];
         [filme setNome:[item objectForKey:@"trackName"]];
-        [filme setTrackId:[item objectForKey:@"trackId"]];
         [filme setArtista:[item objectForKey:@"artistName"]];
-        [filme setDuracao:[item objectForKey:@"trackTimeMillis"]];
-        [filme setGenero:[item objectForKey:@"primaryGenreName"]];
-        [filme setPais:[item objectForKey:@"country"]];
+        [filme setUrlImagem:[item objectForKey:@"artworkUrl100"]];
         [filmes addObject:filme];
     }
     
@@ -89,11 +86,8 @@ static bool isFirstAccess = YES;
     for (NSDictionary *item in resultados) {
         Musica *musica = [[Musica alloc] init];
         [musica setNome:[item objectForKey:@"trackName"]];
-        [musica setTrackId:[item objectForKey:@"trackId"]];
         [musica setArtista:[item objectForKey:@"artistName"]];
-        [musica setDuracao:[item objectForKey:@"trackTimeMillis"]];
-        [musica setGenero:[item objectForKey:@"primaryGenreName"]];
-        [musica setPais:[item objectForKey:@"country"]];
+        [musica setUrlImagem:[item objectForKey:@"artworkUrl100"]];
         [musicas addObject:musica];
     }
     
@@ -123,11 +117,8 @@ static bool isFirstAccess = YES;
     for (NSDictionary *item in resultados) {
         Podcast *podcast = [[Podcast alloc] init];
         [podcast setNome:[item objectForKey:@"trackName"]];
-        [podcast setTrackId:[item objectForKey:@"trackId"]];
         [podcast setArtista:[item objectForKey:@"artistName"]];
-        [podcast setDuracao:[item objectForKey:@"trackTimeMillis"]];
-        [podcast setGenero:[item objectForKey:@"primaryGenreName"]];
-        [podcast setPais:[item objectForKey:@"country"]];
+        [podcast setUrlImagem:[item objectForKey:@"artworkUrl100"]];
         [podcasts addObject:podcast];
     }
     
@@ -157,11 +148,8 @@ static bool isFirstAccess = YES;
     for (NSDictionary *item in resultados) {
         Ebook *ebook = [[Ebook alloc] init];
         [ebook setNome:[item objectForKey:@"trackName"]];
-        [ebook setTrackId:[item objectForKey:@"trackId"]];
         [ebook setArtista:[item objectForKey:@"artistName"]];
-        [ebook setDuracao:[item objectForKey:@"trackTimeMillis"]];
-        [ebook setGenero:[item objectForKey:@"primaryGenreName"]];
-        [ebook setPais:[item objectForKey:@"country"]];
+        [ebook setUrlImagem:[item objectForKey:@"artworkUrl100"]];
         [ebooks addObject:ebook];
     }
     

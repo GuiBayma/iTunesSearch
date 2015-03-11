@@ -14,6 +14,6 @@
 @property (weak, nonatomic) IBOutlet UILabel *tipo;
 @property (weak, nonatomic) IBOutlet UILabel *artista;
 @property (weak, nonatomic) IBOutlet UILabel *tipoArtista;
-
+@property (weak, nonatomic) IBOutlet UIImageView *artWork;
 
 @end

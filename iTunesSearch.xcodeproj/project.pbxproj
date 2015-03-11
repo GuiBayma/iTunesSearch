@@ -13,6 +13,7 @@
 		174BA5AD1AAF824B00050C81 /* Ebook.m in Sources */ = {isa = PBXBuildFile; fileRef = 174BA5AC1AAF824B00050C81 /* Ebook.m */; };
 		177D35EB1AAF2DA70054FD57 /* TableViewHeader.xib in Resources */ = {isa = PBXBuildFile; fileRef = 177D35EA1AAF2DA70054FD57 /* TableViewHeader.xib */; };
 		177D35EE1AAF2F150054FD57 /* TableViewHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = 177D35ED1AAF2F150054FD57 /* TableViewHeader.m */; };
+		179A16AE1AB0873C0008A9AD /* WebImageOperations.m in Sources */ = {isa = PBXBuildFile; fileRef = 179A16AD1AB0873C0008A9AD /* WebImageOperations.m */; };
 		92C21CB61AAE757A0052ABE6 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 92C21CB51AAE757A0052ABE6 /* main.m */; };
 		92C21CB91AAE757A0052ABE6 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 92C21CB81AAE757A0052ABE6 /* AppDelegate.m */; };
 		92C21CBC1AAE757A0052ABE6 /* TableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 92C21CBB1AAE757A0052ABE6 /* TableViewController.m */; };
@@ -49,6 +50,8 @@
 		177D35EA1AAF2DA70054FD57 /* TableViewHeader.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TableViewHeader.xib; sourceTree = "<group>"; };
 		177D35EC1AAF2F150054FD57 /* TableViewHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TableViewHeader.h; sourceTree = "<group>"; };
 		177D35ED1AAF2F150054FD57 /* TableViewHeader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TableViewHeader.m; sourceTree = "<group>"; };
+		179A16AC1AB0873C0008A9AD /* WebImageOperations.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WebImageOperations.h; sourceTree = "<group>"; };
+		179A16AD1AB0873C0008A9AD /* WebImageOperations.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WebImageOperations.m; sourceTree = "<group>"; };
 		92C21CB01AAE757A0052ABE6 /* iTunesSearch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iTunesSearch.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		92C21CB41AAE757A0052ABE6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		92C21CB51AAE757A0052ABE6 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -160,6 +163,8 @@
 				177D35EC1AAF2F150054FD57 /* TableViewHeader.h */,
 				177D35ED1AAF2F150054FD57 /* TableViewHeader.m */,
 				177D35EA1AAF2DA70054FD57 /* TableViewHeader.xib */,
+				179A16AC1AB0873C0008A9AD /* WebImageOperations.h */,
+				179A16AD1AB0873C0008A9AD /* WebImageOperations.m */,
 			);
 			name = Celulas;
 			sourceTree = "<group>";
@@ -291,6 +296,7 @@
 				92C21CE81AAE858E0052ABE6 /* Filme.m in Sources */,
 				177D35EE1AAF2F150054FD57 /* TableViewHeader.m in Sources */,
 				174BA5A71AAF820100050C81 /* Musica.m in Sources */,
+				179A16AE1AB0873C0008A9AD /* WebImageOperations.m in Sources */,
 				92C21CE11AAE76930052ABE6 /* TableViewCell.m in Sources */,
 				92C21CB61AAE757A0052ABE6 /* main.m in Sources */,
 			);

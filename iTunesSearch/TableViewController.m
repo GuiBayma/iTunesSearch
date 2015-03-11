@@ -14,6 +14,7 @@
 #import "Podcast.h"
 #import "Ebook.h"
 #import "TableViewHeader.h"
+#import "WebImageOperations.h"
 
 @interface TableViewController () {
     iTunesManager *itunes;
@@ -77,6 +78,15 @@
         [celula.tipo setText:@"Filme"];
         [celula.tipoArtista setText:@"Diretor:"];
         [celula.artista setText:filme.artista];
+        //[celula.artWork setImage:[UIImage imageWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString:filme.urlImagem]]]];
+        [WebImageOperations processImageDataWithURLString:filme.urlImagem andBlock:^(NSData *imageData) {
+            if (self.view.window) {
+                UIImage *image = [UIImage imageWithData:imageData];
+                
+                [celula.artWork setImage:image];
+            }
+            
+        }];
     
         return celula;
     }
@@ -86,6 +96,14 @@
         [celula.tipo setText:@"Musica"];
         [celula.tipoArtista setText:@"Músico:"];
         [celula.artista setText:musica.artista];
+        [WebImageOperations processImageDataWithURLString:musica.urlImagem andBlock:^(NSData *imageData) {
+            if (self.view.window) {
+                UIImage *image = [UIImage imageWithData:imageData];
+                
+                [celula.artWork setImage:image];
+            }
+            
+        }];
         
         return celula;
     }
@@ -95,6 +113,14 @@
         [celula.tipo setText:@"Podcast"];
         [celula.tipoArtista setText:@"Artista:"];
         [celula.artista setText:podcast.artista];
+        [WebImageOperations processImageDataWithURLString:podcast.urlImagem andBlock:^(NSData *imageData) {
+            if (self.view.window) {
+                UIImage *image = [UIImage imageWithData:imageData];
+                
+                [celula.artWork setImage:image];
+            }
+            
+        }];
         
         return celula;
     }
@@ -104,6 +130,14 @@
         [celula.tipo setText:@"Ebook"];
         [celula.tipoArtista setText:@"Autor:"];
         [celula.artista setText:ebook.artista];
+        [WebImageOperations processImageDataWithURLString:ebook.urlImagem andBlock:^(NSData *imageData) {
+            if (self.view.window) {
+                UIImage *image = [UIImage imageWithData:imageData];
+                
+                [celula.artWork setImage:image];
+            }
+            
+        }];
         
         return celula;
     }
