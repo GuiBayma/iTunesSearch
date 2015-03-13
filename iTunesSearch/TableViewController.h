@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+@class DetailViewController;
 
 @interface TableViewController : UIViewController <UITableViewDataSource, UITableViewDelegate>
 
@@ -18,4 +19,3 @@
 @property NSArray *ebooks;
 
 @end
-

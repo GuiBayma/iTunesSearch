@@ -7,11 +7,8 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "Midia.h"
 
-@interface Musica : NSObject
-
-@property (nonatomic, strong) NSString *nome;
-@property (nonatomic, strong) NSString *artista;
-@property (nonatomic, strong) NSString *urlImagem;
+@interface Musica : Midia
 
 @end

@@ -7,11 +7,8 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "Midia.h"
 
-@interface Filme : NSObject
-
-@property (nonatomic, strong) NSString *nome;
-@property (nonatomic, strong) NSString *artista;
-@property (nonatomic, strong) NSString *urlImagem;
+@interface Filme : Midia
 
 @end

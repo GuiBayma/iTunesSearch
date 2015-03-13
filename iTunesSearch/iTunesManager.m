@@ -37,7 +37,7 @@ static bool isFirstAccess = YES;
         termo = @"";
     }
     
-    NSString *url = [NSString stringWithFormat:@"https://itunes.apple.com/search?term=%@&media=movie", termo];
+    NSString *url = [NSString stringWithFormat:@"https://itunes.apple.com/search?term=%@&media=movie&limit=15", termo];
     NSData *jsonData = [NSData dataWithContentsOfURL: [NSURL URLWithString:url]];
     
     NSError *error;
@@ -55,8 +55,11 @@ static bool isFirstAccess = YES;
     for (NSDictionary *item in resultados) {
         Filme *filme = [[Filme alloc] init];
         [filme setNome:[item objectForKey:@"trackName"]];
+        [filme setNomeTipo:@"Diretor:"];
+        [filme setTipo:@"Filme"];
         [filme setArtista:[item objectForKey:@"artistName"]];
         [filme setUrlImagem:[item objectForKey:@"artworkUrl100"]];
+        [filme setDescricao:[item objectForKey:@"longDescription"]];
         [filmes addObject:filme];
     }
     
@@ -68,7 +71,7 @@ static bool isFirstAccess = YES;
         termo = @"";
     }
     
-    NSString *url = [NSString stringWithFormat:@"https://itunes.apple.com/search?term=%@&media=music", termo];
+    NSString *url = [NSString stringWithFormat:@"https://itunes.apple.com/search?term=%@&media=music&limit=15", termo];
     NSData *jsonData = [NSData dataWithContentsOfURL: [NSURL URLWithString:url]];
     
     NSError *error;
@@ -86,8 +89,11 @@ static bool isFirstAccess = YES;
     for (NSDictionary *item in resultados) {
         Musica *musica = [[Musica alloc] init];
         [musica setNome:[item objectForKey:@"trackName"]];
+        [musica setNomeTipo:@"Artista:"];
+        [musica setTipo:@"Musica"];
         [musica setArtista:[item objectForKey:@"artistName"]];
         [musica setUrlImagem:[item objectForKey:@"artworkUrl100"]];
+        [musica setDescricao:[item objectForKey:@"collectionName"]];
         [musicas addObject:musica];
     }
     
@@ -99,7 +105,7 @@ static bool isFirstAccess = YES;
         termo = @"";
     }
     
-    NSString *url = [NSString stringWithFormat:@"https://itunes.apple.com/search?term=%@&media=podcast", termo];
+    NSString *url = [NSString stringWithFormat:@"https://itunes.apple.com/search?term=%@&media=podcast&limit=15", termo];
     NSData *jsonData = [NSData dataWithContentsOfURL: [NSURL URLWithString:url]];
     
     NSError *error;
@@ -117,8 +123,11 @@ static bool isFirstAccess = YES;
     for (NSDictionary *item in resultados) {
         Podcast *podcast = [[Podcast alloc] init];
         [podcast setNome:[item objectForKey:@"trackName"]];
+        [podcast setNomeTipo:@"Artista:"];
+        [podcast setTipo:@"Podcast"];
         [podcast setArtista:[item objectForKey:@"artistName"]];
         [podcast setUrlImagem:[item objectForKey:@"artworkUrl100"]];
+        [podcast setDescricao:[item objectForKey:@"collectionName"]];
         [podcasts addObject:podcast];
     }
     
@@ -130,7 +139,7 @@ static bool isFirstAccess = YES;
         termo = @"";
     }
     
-    NSString *url = [NSString stringWithFormat:@"https://itunes.apple.com/search?term=%@&media=ebook", termo];
+    NSString *url = [NSString stringWithFormat:@"https://itunes.apple.com/search?term=%@&media=ebook&limit=15", termo];
     NSData *jsonData = [NSData dataWithContentsOfURL: [NSURL URLWithString:url]];
     
     NSError *error;
@@ -148,8 +157,11 @@ static bool isFirstAccess = YES;
     for (NSDictionary *item in resultados) {
         Ebook *ebook = [[Ebook alloc] init];
         [ebook setNome:[item objectForKey:@"trackName"]];
+        [ebook setNomeTipo:@"Autor:"];
+        [ebook setTipo:@"Ebook"];
         [ebook setArtista:[item objectForKey:@"artistName"]];
         [ebook setUrlImagem:[item objectForKey:@"artworkUrl100"]];
+        [ebook setDescricao:[item objectForKey:@"description"]];
         [ebooks addObject:ebook];
     }
     
