@@ -100,6 +100,7 @@
         [celula.tipo setText:filme.tipo];
         [celula.tipoArtista setText:filme.nomeTipo];
         [celula.artista setText:filme.artista];
+        [celula.midiaImage setImage:[UIImage imageNamed:filme.midiaImage]];
         [WebImageOperations processImageDataWithURLString:filme.urlImagem andBlock:^(NSData *imageData) {
             if (self.view.window) {
                 UIImage *image = [UIImage imageWithData:imageData];
@@ -117,6 +118,7 @@
         [celula.tipo setText:musica.tipo];
         [celula.tipoArtista setText:musica.nomeTipo];
         [celula.artista setText:musica.artista];
+        [celula.midiaImage setImage:[UIImage imageNamed:musica.midiaImage]];
         [WebImageOperations processImageDataWithURLString:musica.urlImagem andBlock:^(NSData *imageData) {
             if (self.view.window) {
                 UIImage *image = [UIImage imageWithData:imageData];
@@ -134,6 +136,7 @@
         [celula.tipo setText:podcast.tipo];
         [celula.tipoArtista setText:podcast.nomeTipo];
         [celula.artista setText:podcast.artista];
+        [celula.midiaImage setImage:[UIImage imageNamed:podcast.midiaImage]];
         [WebImageOperations processImageDataWithURLString:podcast.urlImagem andBlock:^(NSData *imageData) {
             if (self.view.window) {
                 UIImage *image = [UIImage imageWithData:imageData];
@@ -151,6 +154,7 @@
         [celula.tipo setText:ebook.tipo];
         [celula.tipoArtista setText:ebook.nomeTipo];
         [celula.artista setText:ebook.artista];
+        [celula.midiaImage setImage:[UIImage imageNamed:ebook.midiaImage]];
         [WebImageOperations processImageDataWithURLString:ebook.urlImagem andBlock:^(NSData *imageData) {
             if (self.view.window) {
                 UIImage *image = [UIImage imageWithData:imageData];

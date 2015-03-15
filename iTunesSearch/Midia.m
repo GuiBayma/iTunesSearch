@@ -16,6 +16,7 @@
     [aCoder encodeObject:self.tipo forKey:@"tipo"];
     [aCoder encodeObject:self.artista forKey:@"artista"];
     [aCoder encodeObject:self.urlImagem forKey:@"urlImagem"];
+    [aCoder encodeObject:self.midiaImage forKey:@"midiaImage"];
     [aCoder encodeObject:self.descricao forKey:@"descricao"];
 }
 
@@ -26,6 +27,7 @@
         self.tipo = [aDecoder decodeObjectForKey:@"tipo"];
         self.artista = [aDecoder decodeObjectForKey:@"artista"];
         self.urlImagem = [aDecoder decodeObjectForKey:@"urlImagem"];
+        self.midiaImage = [aDecoder decodeObjectForKey:@"midiaImage"];
         self.descricao = [aDecoder decodeObjectForKey:@"descricao"];
     }
     return self;

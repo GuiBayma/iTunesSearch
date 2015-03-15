@@ -74,6 +74,7 @@ static bool isFirstAccess = YES;
         [filme setTipo:@"Filme"];
         [filme setArtista:[item objectForKey:@"artistName"]];
         [filme setUrlImagem:[item objectForKey:@"artworkUrl100"]];
+        [filme setMidiaImage:@"movie-100.png"];
         [filme setDescricao:[item objectForKey:@"longDescription"]];
         [filmes addObject:filme];
     }
@@ -106,6 +107,7 @@ static bool isFirstAccess = YES;
         [musica setTipo:@"Musica"];
         [musica setArtista:[item objectForKey:@"artistName"]];
         [musica setUrlImagem:[item objectForKey:@"artworkUrl100"]];
+        [musica setMidiaImage:@"music-96.png"];
         [musica setDescricao:[item objectForKey:@"collectionName"]];
         [musicas addObject:musica];
     }
@@ -138,6 +140,7 @@ static bool isFirstAccess = YES;
         [podcast setTipo:@"Podcast"];
         [podcast setArtista:[item objectForKey:@"artistName"]];
         [podcast setUrlImagem:[item objectForKey:@"artworkUrl100"]];
+        [podcast setMidiaImage:@"radio_tower-104.png"];
         [podcast setDescricao:[item objectForKey:@"collectionName"]];
         [podcasts addObject:podcast];
     }
@@ -170,6 +173,7 @@ static bool isFirstAccess = YES;
         [ebook setTipo:@"Ebook"];
         [ebook setArtista:[item objectForKey:@"artistName"]];
         [ebook setUrlImagem:[item objectForKey:@"artworkUrl100"]];
+        [ebook setMidiaImage:@"literature-100.png"];
         [ebook setDescricao:[item objectForKey:@"description"]];
         [ebooks addObject:ebook];
     }

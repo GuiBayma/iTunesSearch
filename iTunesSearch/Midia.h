@@ -15,6 +15,7 @@
 @property (nonatomic, strong) NSString *tipo;
 @property (nonatomic, strong) NSString *artista;
 @property (nonatomic, strong) NSString *urlImagem;
+@property (nonatomic, strong) NSString *midiaImage;
 @property (nonatomic, strong) NSString *descricao;
 
 - (void) encodeWithCoder:(NSCoder *)aCoder;
