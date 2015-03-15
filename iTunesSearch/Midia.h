@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
-@interface Midia : NSObject
+@interface Midia : NSObject <NSCoding>
 
 @property (nonatomic, strong) NSString *nome;
 @property (nonatomic, strong) NSString *nomeTipo;
@@ -16,5 +16,8 @@
 @property (nonatomic, strong) NSString *artista;
 @property (nonatomic, strong) NSString *urlImagem;
 @property (nonatomic, strong) NSString *descricao;
+
+- (void) encodeWithCoder:(NSCoder *)aCoder;
+-(id) initWithCoder:(NSCoder *)aDecoder;
 
 @end

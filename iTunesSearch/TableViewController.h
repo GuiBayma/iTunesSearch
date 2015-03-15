@@ -11,7 +11,6 @@
 
 @interface TableViewController : UIViewController <UITableViewDataSource, UITableViewDelegate>
 
-
 @property (strong, nonatomic) IBOutlet UITableView *tableview;
 @property NSArray *filmes;
 @property NSArray *musicas;

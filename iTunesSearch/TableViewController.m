@@ -40,6 +40,17 @@
     navItem.titleView = tableHeader;
     
     self.tableview.contentInset = UIEdgeInsetsMake(-20.0, 0, 0, 0);
+    
+    NSUserDefaults *pesquisaSalva = [NSUserDefaults standardUserDefaults];
+    NSData *filmeData = [pesquisaSalva objectForKey:@"filmes"];
+    _filmes = [NSKeyedUnarchiver unarchiveObjectWithData:filmeData];
+    NSData *musicaData = [pesquisaSalva objectForKey:@"musicas"];
+    _musicas = [NSKeyedUnarchiver unarchiveObjectWithData:musicaData];
+    NSData *podcastData = [pesquisaSalva objectForKey:@"podcasts"];
+    _podcasts = [NSKeyedUnarchiver unarchiveObjectWithData:podcastData];
+    NSData *ebookData = [pesquisaSalva objectForKey:@"ebooks"];
+    _ebooks = [NSKeyedUnarchiver unarchiveObjectWithData:ebookData];
+    [pesquisaSalva synchronize];
 }
 
 -(void)viewDidLayoutSubviews {
@@ -53,6 +64,8 @@
 }
 
 #pragma mark - Metodos do UITableViewDataSource
+
+
 -(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
     return 4;
 }
