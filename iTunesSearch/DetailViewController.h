@@ -10,7 +10,6 @@
 @class Midia;
 
 @interface DetailViewController : UIViewController
-@property (weak, nonatomic) IBOutlet UILabel *nome;
 @property (weak, nonatomic) IBOutlet UILabel *tipo;
 @property (weak, nonatomic) IBOutlet UIImageView *imagem;
 @property (weak, nonatomic) IBOutlet UILabel *detalhes;

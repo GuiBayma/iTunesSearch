@@ -18,20 +18,20 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Autor" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IG1-Pe-U6d">
-                    <rect key="frame" x="10" y="80" width="580" height="20"/>
+                    <rect key="frame" x="10" y="100" width="580" height="19.5"/>
                     <fontDescription key="fontDescription" type="system" pointSize="16"/>
                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="bSY-08-PQr">
-                    <rect key="frame" x="200" y="119" width="200" height="200"/>
+                    <rect key="frame" x="200" y="139.5" width="200" height="200"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="200" id="hWu-c3-3Kd"/>
                         <constraint firstAttribute="height" constant="200" id="klA-Rz-Xv2"/>
                     </constraints>
                 </imageView>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Detalhes" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="15" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="99a-68-Y6B">
-                    <rect key="frame" x="10" y="340" width="580" height="20"/>
+                    <rect key="frame" x="10" y="359.5" width="580" height="19.5"/>
                     <fontDescription key="fontDescription" type="system" pointSize="16"/>
                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
@@ -47,7 +47,7 @@
                 <constraint firstAttribute="trailing" secondItem="IG1-Pe-U6d" secondAttribute="trailing" constant="10" id="eAu-pV-SGQ"/>
                 <constraint firstAttribute="centerX" secondItem="bSY-08-PQr" secondAttribute="centerX" id="eCS-1X-P8g"/>
                 <constraint firstAttribute="trailing" secondItem="99a-68-Y6B" secondAttribute="trailing" constant="10" id="kTk-Ug-GI7"/>
-                <constraint firstItem="IG1-Pe-U6d" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="80" id="toO-Ii-efJ"/>
+                <constraint firstItem="IG1-Pe-U6d" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="100" id="toO-Ii-efJ"/>
                 <constraint firstAttribute="centerX" secondItem="IG1-Pe-U6d" secondAttribute="centerX" id="ybI-T9-8qJ"/>
             </constraints>
             <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>

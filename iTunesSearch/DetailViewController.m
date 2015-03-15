@@ -23,7 +23,6 @@
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
     
-    _nome.text = _midia.nome;
     _tipo.text = _midia.artista;
     [_imagem setImage:[UIImage imageWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString:_midia.urlImagem]]]];
     _detalhes.text = _midia.descricao;

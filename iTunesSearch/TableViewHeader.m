@@ -21,6 +21,7 @@
     tvc.podcasts = [itunes buscarPodcasts:_textoBusca.text];
     tvc.ebooks = [itunes buscarEbooks:_textoBusca.text];
     [tvc.tableview reloadData];
+    [_textoBusca resignFirstResponder];
 }
 
 @end

@@ -31,19 +31,34 @@ static bool isFirstAccess = YES;
     return SINGLETON;
 }
 
+- (NSString *) regularizarExpressao:(NSString *) termo {
+    if (!termo) {
+        return @"";
+    }
+    NSRange   searchedRange = NSMakeRange(0, [termo length]);
+    NSString *pattern = [NSString stringWithFormat:@"\\b"];
+    
+    NSRegularExpression *regex = [NSRegularExpression regularExpressionWithPattern:pattern options:0 error:nil];
+    NSMutableString *termoMutable = [termo mutableCopy];
+    NSString *trimmed = termoMutable;
+    NSArray *resultadosMatches = [regex matchesInString:termoMutable options:0 range:searchedRange];
+    if (resultadosMatches.count > 0) {
+        trimmed = [termoMutable stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet]];
+        return  trimmed;
+    }
+    return trimmed;
+}
 
 - (NSArray *)buscarFilmes:(NSString *)termo {
-    if (!termo) {
-        termo = @"";
-    }
+    NSString *termoRegularizado = [self regularizarExpressao:termo];
     
-    NSString *url = [NSString stringWithFormat:@"https://itunes.apple.com/search?term=%@&media=movie&limit=15", termo];
-    NSData *jsonData = [NSData dataWithContentsOfURL: [NSURL URLWithString:url]];
-    
+    NSString *url = [NSString stringWithFormat:@"https://itunes.apple.com/search?term=%@&media=movie&limit=15", termoRegularizado];
     NSError *error;
+    NSData *jsonData = [NSData dataWithContentsOfURL: [NSURL URLWithString:url]];
     NSDictionary *resultado = [NSJSONSerialization JSONObjectWithData:jsonData
                                                               options:NSJSONReadingMutableContainers
                                                                 error:&error];
+    
     if (error) {
         NSLog(@"Não foi possível fazer a busca. ERRO: %@", error);
         return nil;
@@ -67,11 +82,9 @@ static bool isFirstAccess = YES;
 }
 
 - (NSArray *)buscarMusicas:(NSString *)termo {
-    if (!termo) {
-        termo = @"";
-    }
+    NSString *termoRegularizado = [self regularizarExpressao:termo];
     
-    NSString *url = [NSString stringWithFormat:@"https://itunes.apple.com/search?term=%@&media=music&limit=15", termo];
+    NSString *url = [NSString stringWithFormat:@"https://itunes.apple.com/search?term=%@&media=music&limit=15", termoRegularizado];
     NSData *jsonData = [NSData dataWithContentsOfURL: [NSURL URLWithString:url]];
     
     NSError *error;
@@ -101,11 +114,9 @@ static bool isFirstAccess = YES;
 }
 
 - (NSArray *)buscarPodcasts:(NSString *)termo {
-    if (!termo) {
-        termo = @"";
-    }
+    NSString *termoRegularizado = [self regularizarExpressao:termo];
     
-    NSString *url = [NSString stringWithFormat:@"https://itunes.apple.com/search?term=%@&media=podcast&limit=15", termo];
+    NSString *url = [NSString stringWithFormat:@"https://itunes.apple.com/search?term=%@&media=podcast&limit=15", termoRegularizado];
     NSData *jsonData = [NSData dataWithContentsOfURL: [NSURL URLWithString:url]];
     
     NSError *error;
@@ -135,11 +146,9 @@ static bool isFirstAccess = YES;
 }
 
 - (NSArray *)buscarEbooks:(NSString *)termo {
-    if (!termo) {
-        termo = @"";
-    }
+    NSString *termoRegularizado = [self regularizarExpressao:termo];
     
-    NSString *url = [NSString stringWithFormat:@"https://itunes.apple.com/search?term=%@&media=ebook&limit=15", termo];
+    NSString *url = [NSString stringWithFormat:@"https://itunes.apple.com/search?term=%@&media=ebook&limit=15", termoRegularizado];
     NSData *jsonData = [NSData dataWithContentsOfURL: [NSURL URLWithString:url]];
     
     NSError *error;

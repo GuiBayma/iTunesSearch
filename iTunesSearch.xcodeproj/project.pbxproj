@@ -120,6 +120,7 @@
 		92C21CB21AAE757A0052ABE6 /* iTunesSearch */ = {
 			isa = PBXGroup;
 			children = (
+				174BA5A11AAF772D00050C81 /* Localizable.strings */,
 				92C21CE31AAE76AA0052ABE6 /* Celulas */,
 				92C21CE91AAE859A0052ABE6 /* Entidades */,
 				92C21CB71AAE757A0052ABE6 /* AppDelegate.h */,
@@ -134,7 +135,6 @@
 				92C21CDA1AAE75B30052ABE6 /* iTunesManager.m */,
 				179A16AC1AB0873C0008A9AD /* WebImageOperations.h */,
 				179A16AD1AB0873C0008A9AD /* WebImageOperations.m */,
-				174BA5A11AAF772D00050C81 /* Localizable.strings */,
 				92C21CC01AAE757A0052ABE6 /* Images.xcassets */,
 				92C21CB31AAE757A0052ABE6 /* Supporting Files */,
 			);

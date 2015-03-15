@@ -9,7 +9,7 @@
 #import "TableViewController.h"
 #import "TableViewCell.h"
 #import "iTunesManager.h"
-#import "Entidades/Filme.h"
+#import "Filme.h"
 #import "Musica.h"
 #import "Podcast.h"
 #import "Ebook.h"
@@ -19,7 +19,6 @@
 
 @interface TableViewController () {
     iTunesManager *itunes;
-    TableViewHeader *tableHeader;
 }
 
 @end
@@ -32,14 +31,21 @@
     UINib *nib = [UINib nibWithNibName:@"TableViewCell" bundle:nil];
     [self.tableview registerNib:nib forCellReuseIdentifier:@"celulaPadrao"];
     
-    tableHeader = [[[NSBundle mainBundle] loadNibNamed:@"TableViewHeader" owner:self options:nil] firstObject];
+    TableViewHeader *tableHeader = [[[NSBundle mainBundle] loadNibNamed:@"TableViewHeader" owner:self options:nil] firstObject];
     
     [tableHeader.buscaButton setTitle:NSLocalizedString(@"busca", nil) forState:UIControlStateNormal];
     [tableHeader.tituloLabel setText:NSLocalizedString(@"titulo", nil)];
     
     UINavigationItem *navItem = self.navigationController.navigationBar.topItem;
-    navItem.title = @"Busca de Midia";
-    }
+    navItem.titleView = tableHeader;
+    
+    self.tableview.contentInset = UIEdgeInsetsMake(-20.0, 0, 0, 0);
+}
+
+-(void)viewDidLayoutSubviews {
+    UINavigationBar *navBar = self.navigationController.navigationBar;
+    [navBar setFrame:CGRectMake(0, 0, [UIScreen mainScreen].bounds.size.width, 90)];
+}
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
@@ -81,7 +87,6 @@
         [celula.tipo setText:filme.tipo];
         [celula.tipoArtista setText:filme.nomeTipo];
         [celula.artista setText:filme.artista];
-        celula.detalhes = filme.descricao;
         [WebImageOperations processImageDataWithURLString:filme.urlImagem andBlock:^(NSData *imageData) {
             if (self.view.window) {
                 UIImage *image = [UIImage imageWithData:imageData];
@@ -172,19 +177,8 @@
     return 90;
 }
 
--(UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {
-    if (section == 0) {
-        return tableHeader;
-    }
-    return  nil;
-}
-
 -(CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {
-    if (section == 0) {
-        return 90;
-    }
     return  60;
 }
-
 
 @end
